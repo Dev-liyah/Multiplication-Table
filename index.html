@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body {
+            background-color: teal;
+            display: flex;
+            justify-content: center;
+        }
+
+        #div {
+            background-color: white;
+            height: auto;
+            width: 350px;
+            text-align: center;
+            border-radius: 15px;
+        }
+
+        #div input {
+            border-radius: 15px;
+            border: 2px solid teal;
+            width: 150px;
+            margin: 20px 0 0 10px;
+        }
+
+        #div button {
+            background-color: teal;
+            color: white;
+            margin: 0 0 0 13px;
+            font-size: 26px;
+            width: 30px;
+            text-align: center;
+            height: 25px;
+            border: 1px solid white;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div id="div">
+        <input type="text" id="input1">
+        <input type="text" id="input2">
+        <button onclick="multiply()">*</button>
+        <h1 id="para"></h1>
+    </div>
+
+</body>
+
+</html>
+<script>
+    let input1 = document.getElementById('input1')
+    let input2 = document.getElementById('input2')
+    let result = document.getElementById('para')
+
+    function multiply() {
+        result.innerHTML = ""
+        if (input1.value > input2.value) {
+            alert("Input1 must be greater than Input2")
+        } else {
+            for (let a = input1.value; a <= input2.value; a++) {
+                for (let b = 1; b <= input2.value; b++) {
+                    console.log(`${a}*${b}=${a * b}`);
+                    let finalAns = `<p>${a}*${b}=${a * b}</P>`
+                    result.innerHTML += finalAns
+                }
+            }
+        }
+    }
+
+</script>
